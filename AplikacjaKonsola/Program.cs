@@ -7,24 +7,26 @@
             Console.Write("Podaj numer pesel: ");
             string peselText = Console.ReadLine();
             char[] pesel = peselText.ToCharArray();
-            if (CheckGender(pesel) == 'K')
-            {
-                Console.WriteLine("Kobieta");
-            }
-            else
-            {
-                Console.WriteLine("Mężczyzna");
-            }
-            if (CheckSum(pesel))
-            {
-                Console.WriteLine("true");
-            }
-            else
-            {
-                Console.WriteLine("False");
-            }
-        }
 
+            if (CheckGender(pesel) == 'K')
+                Console.WriteLine("Kobieta");
+            else
+                Console.WriteLine("Mężczyzna");
+
+            if (CheckSum(pesel))
+                Console.WriteLine("Zgodny pesel");
+            else
+                Console.WriteLine("Niezgodny pesel!");
+        }
+        /*
+        **********************************************
+        nazwa funkcji: CheckGender
+        opis funkcji: Funkcja sprawdza czy 10 cyfra peselu jest parzysta.W przypadku spełnienia warunku zwracany jest znak 'K', w przeciwnym razie 'M'
+        parametry: char[] pesel - tablcia znaków przechowująca pesel
+        zwracany typ i opis: typ: char - zwracany jest znak oznaczający kobietę w przypadku 'K' i mężczyznę w przypadku 'M'
+        autor: Paweł Marcisz
+        ***********************************************
+        */
         private static char CheckGender(char[] pesel)
         {
             if ((pesel[9] - '0') % 2 == 0)
